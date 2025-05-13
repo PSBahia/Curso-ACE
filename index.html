@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuidar da Comunidade</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <header>
+    <h1>Cuidar da Comunidade</h1>
+    <p>Identifique e apoie pessoas em situação de vulnerabilidade social e de saúde</p>
+  </header>
+
+  <section class="impacto">
+    <h2>Você sabia?</h2>
+    <p>
+      Milhares de pessoas vivem em situação de abandono dentro das próprias comunidades. 
+      Idosos enfrentam diariamente a fome, doenças crônicas sem acompanhamento adequado, falta de saneamento, e até a perda do direito à própria aposentadoria.
+      Muitas vezes, eles são invisíveis aos olhos da sociedade.
+    </p>
+    <p>
+      Ao notar sinais de vulnerabilidade — como maus odores, lixo acumulado, ausência de cuidados médicos, ou isolamento — você pode ser a ponte entre a negligência e o cuidado.
+      Sua atitude pode garantir dignidade, saúde e proteção a quem mais precisa.
+    </p>
+  </section>
+
+  <section class="conscientizacao">
+    <h2>Por que isso é importante?</h2>
+    <ul>
+      <li>Garantir acesso à saúde e assistência social a quem mais precisa.</li>
+      <li>Evitar agravamento de doenças crônicas e situações de risco.</li>
+      <li>Mobilizar a comunidade para cuidar de seus membros.</li>
+      <li>Promover ambientes mais seguros e saudáveis.</li>
+    </ul>
+    <a href="#formulario"><button onclick="mostrarFormulario()">Registrar um caso</button></a>
+  </section>
+
+  <section class="formulario" id="formulario">
+    <h2>Formulário de Registro</h2>
+    <input type="text" id="nome" placeholder="Nome da pessoa em situação de vulnerabilidade" required />
+    <input type="text" id="endereco" placeholder="Endereço completo" required />
+    <textarea id="situacao" rows="5" placeholder="Descreva a situação observada (ex: problemas de saúde, ambiente, abandono etc)" required></textarea>
+    <input type="text" id="contato" placeholder="Seu nome ou contato para retorno (opcional)" />
+    <button onclick="enviarWhatsApp()">Enviar via WhatsApp</button>
+  </section>
+
+  <footer >
+    <p>Desenvolvido por Paulo Sérgio - Todos os direitos reservados &copy;</p>
+  </footer>
+
+</body>
+</html>
