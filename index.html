@@ -81,45 +81,7 @@
     }
   </script>
 
-<script>
-  let deferredPrompt;
-  const popup = document.getElementById('popupInstalacao');
-  const confirmarBtn = document.getElementById('confirmarInstalacao');
-  const fecharBtn = document.getElementById('fecharPopup');
-
-  // Verifica se o app já está instalado (em Android/Chrome)
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    if (!isStandalone) {
-      e.preventDefault();
-      deferredPrompt = e;
-      popup.style.display = 'flex'; // mostra o pop-up
-    }
-    else{popup.style.display = 'none';}
-  });
-
-  confirmarBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('Usuário aceitou instalar');
-        } else {
-          console.log('Usuário recusou instalar');
-        }
-        deferredPrompt = null;
-      });
-    }
-  });
-
-  fecharBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-</script>
-
-
+<script src="instalacao-popup.js" defer></script>
 
 </body>
 </html>
