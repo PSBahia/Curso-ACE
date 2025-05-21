@@ -4,18 +4,24 @@ const confirmarBtn = document.getElementById('confirmarInstalacao');
 const fecharBtn = document.getElementById('fecharPopup');
 
 function isAppInstalado() {
-  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true);
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 }
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  if (!isAppInstalado()) {
+// Se já estiver instalado, nem mostra o popup
+if (isAppInstalado()) {
+  popup.style.display = 'none';
+} else {
+  // Só escuta o evento se o app não estiver instalado
+  window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    popup.style.display = 'flex';
-  } else {
-    popup.style.display = 'none';
-  }
-});
+
+    // Adiciona um atraso para garantir que o DOM esteja pronto
+    setTimeout(() => {
+      popup.style.display = 'flex';
+    }, 100); // pequena espera para o layout
+  });
+}
 
 confirmarBtn.addEventListener('click', () => {
   popup.style.display = 'none';

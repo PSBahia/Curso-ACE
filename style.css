@@ -122,12 +122,13 @@
     }
     
     .popup-content {
-      background: white;
+      background: rgba(203, 201, 201, 0.927);
       padding: 20px 30px;
       border-radius: 10px;
       text-align: center;
       box-shadow: 0 0 10px #444;
-      max-width: 400px;
+      width: 400px;
+      max-width: 90%;
       display: block;
     }
     
@@ -146,6 +147,29 @@
     }
     
     #fecharPopup {
-      background-color: #e65100;
+      margin-top: 20px;
+      background-color: #f7e6e6;
+      color: rgb(8, 8, 8);
     }
     
+    @media screen and (max-width: 600px) {
+      .impacto, .conscientizacao, .formulario {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .conscientizacao{
+        margin-bottom: 100px;
+      }
+      input, textarea {
+        width: 100%;
+      }
+      button {
+        width: 100%;
+      }
+
+      .popup-content {
+        width: 70%;
+      }
+      
+    }
