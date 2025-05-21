@@ -66,15 +66,17 @@
       border-radius: 10px;
       margin-top: 20px;
       margin-bottom: 130px;
+      width: 80%;
     }
     input, textarea {
       width: 90%;
       padding: 10px;
-     
-      margin: 10px;
+      margin: 5px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
+      box-sizing: border-box; /* Ensures padding and border are included in width */
     }
+
     button {
       font-size: 18px;
       background-color: #2e7d32;
@@ -153,7 +155,7 @@
     }
     
     @media screen and (max-width: 600px) {
-      .impacto, .conscientizacao, .formulario {
+      .impacto, .conscientizacao{
         margin: 20px;
         padding: 20px;
       }
